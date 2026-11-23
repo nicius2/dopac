@@ -1,0 +1,13 @@
+pre-commit:
+  parallel: true
+  commands:
+    fmt:
+      glob: '*.{ts,tsx,js,jsx,json,css,md}'
+      run: bunx oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+    typecheck:
+      glob: '*.{ts,tsx}'
+      run: bunx tsc --noEmit
+    lint:
+      glob: '*.{ts,tsx,js,jsx}'
+      run: bunx expo lint {staged_files}

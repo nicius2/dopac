@@ -1,7 +1,18 @@
 {
   "name": "dopac",
   "version": "1.0.0",
+  "private": true,
   "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "lint": "expo lint",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
     "@shopify/react-native-skia": "2.14.0",
     "expo": "~58.0.26",
@@ -31,14 +42,9 @@
     "@types/react": "~19.3.0",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~58.0.4",
+    "lefthook": "^2.2.2",
+    "oxfmt": "^0.80.0",
     "typescript": "~6.0.3"
-  },
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "lint": "expo lint"
   },
   "reanimated": {
     "staticFeatureFlags": {
@@ -46,5 +52,7 @@
       "IOS_SYNCHRONOUSLY_UPDATE_UI_PROPS": true
     }
   },
-  "private": true
+  "trustedDependencies": [
+    "lefthook"
+  ]
 }
